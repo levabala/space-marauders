@@ -11,14 +11,15 @@ interface Active<S> {
 
 // contains things
 interface Container {
-  subEntities: Material[];
+  things: Material[];
 }
 
-enum Interactivity {
+enum Ability {
   Open,
   Close,
   Hack,
-  Kick
+  Kick,
+  Shoot
 }
 
 enum State {
@@ -36,7 +37,7 @@ interface Material {
   equipable: boolean;
   pickable: boolean;
 
-  interactivities: Interactivity[];
+  interactivities: Ability[];
   states: State[];
 }
 
@@ -45,6 +46,9 @@ interface Creature {
   str: number;
   dex: number;
   int: number;
+
+  equiped: Material[];
+  abilities: Ability[];
 }
 
 // deals damage at range
